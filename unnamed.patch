@@ -1,0 +1,35 @@
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/vcs.xml	(date 1562300705121)
++++ .idea/vcs.xml	(date 1562300705121)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: Source/SBS/bookings/urls.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Source/SBS/bookings/urls.py	(date 1557130118136)
++++ Source/SBS/bookings/urls.py	(date 1557130118136)
+@@ -0,0 +1,12 @@
++from django.urls import path
++from .views import list_companies, create_company, update_company, delete_company, PhaseListView
++
++
++urlpatterns = [
++
++    path('', list_companies, name='list_companies'),
++    path('new', create_company, name='create_companies'),
++    path('update/<int:id>', update_company, name='update_company'),
++    path('delete/<int:id>', update_company, name='delete_company'),
++    path('phaseview/', PhaseListView.as_view(), name='phase-list'),
++]
